@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "TezzeractH1",
+  "dependencies": [
+    "cn@^0.5.2"
+  ],
+  "files": [
+    {
+      "path": "components/ui/TezzeractH1.tsx",
+      "content": "import React from \"react\";\nimport { cn } from \"cn\";\n\nexport interface TezzeractH1Props extends React.HTMLAttributes<HTMLHeadingElement> {\n  variant?: \"light\" | \"dark\";\n  children: React.ReactNode;\n}\n\nexport const TezzeractH1 = React.forwardRef<HTMLHeadingElement, TezzeractH1Props>(\n  ({ className, variant = \"light\", children, style, ...props }, ref) => {\n    // Mobile-first styles: base (mobile) then md: (desktop)\n    const baseStyles = \"text-[36px] leading-[42px] tracking-[-0.05em] text-center font-light bg-clip-text text-transparent md:text-[72px] md:leading-[84px] md:text-left\";\n\n    // Light variant gradient\n    const lightGradient = \"linear-gradient(257.31deg, #FFFFFF 16.02%, #D6D6D6 49.66%, #FFFFFF 83.98%)\";\n\n    // Dark variant gradient (adjusted for dark theme)\n    const darkGradient = \"linear-gradient(90deg, #27AAE1 0%, #1C75BC 100%)\";\n\n    const gradientStyle = variant === \"dark\" ? darkGradient : lightGradient;\n\n    return (\n      <h1\n        ref={ref}\n        className={cn(baseStyles, className)}\n        style={{\n          backgroundImage: gradientStyle,\n          WebkitBackgroundClip: \"text\",\n          WebkitTextFillColor: \"transparent\",\n          fontFamily: \"var(--font-manrope), sans-serif\",\n          ...style,\n        }}\n        {...props}\n      >\n        {children}\n      </h1>\n    );\n  }\n);\n\nTezzeractH1.displayName = \"TezzeractH1\";\n\nexport default TezzeractH1;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

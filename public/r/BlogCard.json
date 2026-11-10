@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "BlogCard",
+  "registryDependencies": [
+    "@tezzeract/UserCard"
+  ],
+  "files": [
+    {
+      "path": "components/ui/BlogCard.tsx",
+      "content": "import React from \"react\";\nimport Image from \"next/image\";\nimport Link from \"next/link\";\nimport UserCard from \"./UserCard\";\n\ninterface BlogCardProps {\n  postImage: string;\n  postTitle: string;\n  tag?: string;\n  slug: string;\n  author: {\n    name: string;\n    position: string;\n    avatar: string;\n  };\n}\n\nconst BlogCard = ({ postImage, postTitle, tag, slug, author }: BlogCardProps) => {\n  return (\n    <Link href={`/blog/${slug}`} className=\"block h-full\" target=\"_blank\" rel=\"noopener noreferrer\">\n      <div className=\"relative flex flex-col h-full rounded-2xl overflow-hidden\" style={{ backgroundColor: '#F9F9F9' }}>\n        {/* Image area - at the top */}\n        <div className=\"relative bg-white h-[265px] flex items-center rounded-3xl justify-center overflow-hidden aspect-square\">\n          <Image\n            src={postImage}\n            alt={postTitle}\n            width={600}\n            height={600}\n            className=\"object-cover w-full h-full\"\n            unoptimized={postImage.startsWith('http://localhost')}\n          />\n          {/* Tag overlay - bottom left */}\n          <div className=\"absolute bottom-4 left-4 z-10\">\n            <span\n              className=\"text-[12px] md:text-[10px] lg:text-sm text-white font-light inline-block px-4 py-2 whitespace-nowrap\"\n              style={{\n                borderRadius: '24px',\n                borderWidth: '1px',\n                borderStyle: 'solid',\n                borderColor: '#EBEBEB4D',\n                background: 'radial-gradient(50.47% 50.47% at 55.88% 97.48%, rgba(253, 253, 253, 0.06) 0%, rgba(61, 61, 58, 0.3) 100%)',\n                backdropFilter: 'blur(200px)',\n                WebkitBackdropFilter: 'blur(200px)',\n                width: 'fit-content',\n                minWidth: 'fit-content',\n                maxWidth: 'fit-content',\n              }}\n            >\n              {tag || 'Article'}\n            </span>\n          </div>\n        </div>\n\n        {/* Content area */}\n        <div className=\"flex-1 p-8 flex flex-col justify-between\">\n          <div>\n            {/* Title */}\n            <h2 className=\"text-[#340E0E] text-[20px] md:text-2xl font-light mb-3 leading-tight\">\n              {postTitle}\n            </h2>\n          </div>\n\n          <div>\n            {/* User Card */}\n            <UserCard\n              name={author.name}\n              position={author.position}\n              avatar={author.avatar}\n            />\n          </div>\n\n        </div>\n      </div>\n    </Link>\n  );\n};\n\nexport default BlogCard;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

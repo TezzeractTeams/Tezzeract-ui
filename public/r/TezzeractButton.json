@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "TezzeractButton",
+  "dependencies": [
+    "cn@^0.5.2"
+  ],
+  "files": [
+    {
+      "path": "components/ui/TezzeractButton.tsx",
+      "content": "import React from \"react\";\nimport { cn } from \"cn\";\n\nexport interface TezzeractButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  fullWidth?: boolean;\n  children: React.ReactNode;\n}\n\nexport const TezzeractButton = React.forwardRef<HTMLButtonElement, TezzeractButtonProps>(\n  ({ className, fullWidth = false, children, ...props }, ref) => {\n    // Base styles from Figma with smooth transitions\n    const baseStyles = \"inline-flex cursor-pointer flex-row items-center text-[14px] justify-center gap-2 font-thin focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden whitespace-nowrap\";\n\n    // Layout and spacing\n    const layoutStyles = \"max-h-10 px-6 py-3 rounded-xl\";\n\n    // Border and text\n    const borderStyles = \"border border-white/30 text-white\";\n\n    // Width style\n    const widthStyle = fullWidth ? \"w-full\" : \"\";\n\n    return (\n      <button\n        ref={ref}\n        className={cn(\n          baseStyles,\n          layoutStyles,\n          borderStyles,\n          widthStyle,\n          \"bg-[radial-gradient(64.46%_80%_at_50.53%_0%,#009BE9_0%,#00378A_100%)]\",\n          \"before:content-[''] before:absolute before:inset-0 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-300 before:ease-in-out\",\n          \"before:bg-[radial-gradient(93.12%_100%_at_50.53%_0%,#009BE9_0%,#00378A_100%)]\",\n          \"hover:before:opacity-100\",\n          \"hover:shadow-[0_0_10px_0_rgba(0,169,238,0.40)]\",\n          \"transition-shadow duration-400 ease-in-out\",\n          className\n        )}\n        {...props}\n      >\n        <div className=\"relative z-10 inline-flex items-center gap-2\">{children}</div>\n      </button>\n    );\n  }\n);\n\nTezzeractButton.displayName = \"TezzeractButton\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

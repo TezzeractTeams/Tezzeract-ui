@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tezzeract-ui",
+  "registryDependencies": [
+    "@tezzeract/BlogCard",
+    "@tezzeract/Globle",
+    "@tezzeract/PortfolioCard",
+    "@tezzeract/ServiceItem",
+    "@tezzeract/ServiceSlider",
+    "@tezzeract/TalentCard",
+    "@tezzeract/TezzeractButton",
+    "@tezzeract/TezzeractButtonLight",
+    "@tezzeract/TezzeractH1",
+    "@tezzeract/TezzeractText",
+    "@tezzeract/Tooltip",
+    "@tezzeract/UserCard",
+    "@tezzeract/clipath",
+    "@tezzeract/pinned-scroll-context",
+    "@tezzeract/utils",
+    "@tezzeract/world-map"
+  ],
+  "type": "registry:ui"
+}

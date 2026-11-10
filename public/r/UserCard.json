@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "UserCard",
+  "files": [
+    {
+      "path": "components/ui/UserCard.tsx",
+      "content": "import React from \"react\";\nimport Image from \"next/image\";\n\ninterface UserCardProps {\n  name: string;\n  position: string;\n  avatar: string;\n}\n\nconst UserCard = ({ name, position, avatar }: UserCardProps) => {\n  return (\n    <div className=\"flex items-center gap-3 mt-4\">\n      {/* Profile Picture */}\n      <div className=\"w-12 h-12 md:w-14 md:h-14 rounded-lg overflow-hidden shrink-0\">\n        <Image\n          src={avatar}\n          alt={name}\n          width={128}\n          height={128}\n          className=\"object-cover w-full h-full\"\n        />\n      </div>\n\n      {/* Name and Title */}\n      <div className=\"flex flex-col\">\n        <span className=\"text-black font-normal text-sm md:text-base\">\n          {name}\n        </span>\n        <span className=\"text-gray-500 text-xs md:text-sm\">\n          {position}\n        </span>\n      </div>\n    </div>\n  );\n};\n\nexport default UserCard;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

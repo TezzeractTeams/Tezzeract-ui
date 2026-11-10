@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "clipath",
+  "files": [
+    {
+      "path": "components/ui/clipath.tsx",
+      "content": "import React from 'react';\n\nfunction ClipPathImage() {\n  return (\n    <>\n      {/* Hidden SVG with clip path definition */}\n      <svg className=\"absolute -top-[999px] -left-[999px] w-0 h-0\">\n        <defs>\n          <clipPath id=\"custom-1768979813052\" clipPathUnits=\"objectBoundingBox\">\n            <path\n              d=\"M442.106 0.0102539C443.236 -0.0166796\"\n              fill=\"black\"\n            />\n          </clipPath>\n        </defs>\n\n      </svg>\n\n      {/* Image with clip path applied */}\n      <figure style={{ clipPath: 'url(#custom-1768979813052)' }} className=\"\">\n        <img\n          src=\"your-image-url.jpg\"\n          alt=\"Description\"\n          className=\"w-full h-full object-cover transition-transform duration-300 hover:scale-105\"\n        />\n      </figure>\n    </>\n  );\n}\n\nexport default ClipPathImage;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

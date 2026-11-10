@@ -1,0 +1,233 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "tezzeract-ui",
+  "homepage": "https://ui.tezzeract.com",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "files": [
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "pinned-scroll-context",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "lib/pinned-scroll-context.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "BlogCard",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "@tezzeract/UserCard"
+      ],
+      "files": [
+        {
+          "path": "components/ui/BlogCard.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "Globle",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "cobe@^0.6.5",
+        "lenis@^1.3.27",
+        "motion@^12.43.0"
+      ],
+      "registryDependencies": [
+        "@tezzeract/pinned-scroll-context"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Globle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "PortfolioCard",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react@^1.71.0"
+      ],
+      "files": [
+        {
+          "path": "components/ui/PortfolioCard.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ServiceItem",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "components/ui/ServiceItem.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ServiceSlider",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "@tezzeract/ServiceItem"
+      ],
+      "files": [
+        {
+          "path": "components/ui/ServiceSlider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "TalentCard",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TalentCard.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "TezzeractButton",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TezzeractButton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "TezzeractButtonLight",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TezzeractButtonLight.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "TezzeractH1",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TezzeractH1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "TezzeractText",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "files": [
+        {
+          "path": "components/ui/TezzeractText.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "Tooltip",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion@^12.43.0"
+      ],
+      "files": [
+        {
+          "path": "components/ui/Tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "UserCard",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "components/ui/UserCard.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "clipath",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "components/ui/clipath.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "world-map",
+      "type": "registry:ui",
+      "dependencies": [
+        "dotted-map@^2.2.3",
+        "motion@^12.43.0",
+        "next-themes@^0.4.6"
+      ],
+      "files": [
+        {
+          "path": "components/ui/world-map.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tezzeract-ui",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "@tezzeract/BlogCard",
+        "@tezzeract/Globle",
+        "@tezzeract/PortfolioCard",
+        "@tezzeract/ServiceItem",
+        "@tezzeract/ServiceSlider",
+        "@tezzeract/TalentCard",
+        "@tezzeract/TezzeractButton",
+        "@tezzeract/TezzeractButtonLight",
+        "@tezzeract/TezzeractH1",
+        "@tezzeract/TezzeractText",
+        "@tezzeract/Tooltip",
+        "@tezzeract/UserCard",
+        "@tezzeract/clipath",
+        "@tezzeract/pinned-scroll-context",
+        "@tezzeract/utils",
+        "@tezzeract/world-map"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "TalentCard",
+  "dependencies": [
+    "cn@^0.5.2"
+  ],
+  "files": [
+    {
+      "path": "components/ui/TalentCard.tsx",
+      "content": "\"use client\";\n\nimport React from \"react\";\nimport Image from \"next/image\";\nimport { cn } from \"cn\";\n\nexport interface TalentCardProps {\n  imageSrc?: string;\n  alt?: string;\n  className?: string;\n}\n\nexport default function TalentCard({\n  imageSrc = \"/talentImg.png\",\n  alt = \"Talent\",\n  className = \"\",\n}: TalentCardProps) {\n  return (\n    <div\n      className={cn(\"relative md:h-[19vh] lg:h-[25vh] h-[25vh]\", className)}\n      style={{\n        width: \"14vw\", // Approximately 220px at 1920px viewport\n\n        minWidth: \"180px\", // Fallback for smaller screens\n        minHeight: \"180px\", // Fallback for smaller screens\n      }}\n    >\n      {/* Gradient border wrapper - outer div with gradient background */}\n      <div\n        className=\"absolute inset-0 rounded-[24px]\"\n        style={{\n          background: \"linear-gradient(226.72deg, rgba(0, 169, 238, 0.1) 9.34%, rgba(0, 55, 138, 0.1) 90.32%)\",\n        }}\n      >\n        {/* Inner content card with margin to create border effect */}\n        <div\n          className=\"absolute inset-[2px] rounded-[22px] overflow-hidden\"\n          style={{\n            background: \"linear-gradient(224.11deg, rgba(255, 255, 255, 0.3) 6.72%, rgba(153, 153, 153, 0.1) 92.37%)\",\n            backdropFilter: \"blur(100px)\",\n            WebkitBackdropFilter: \"blur(100px)\",\n          }}\n        >\n          {/* Talent Image */}\n          <div className=\"relative w-full h-full\">\n            <Image\n              src={imageSrc}\n              alt={alt}\n              fill\n              className=\"object-cover md:object-contain md:object-bottom\"\n              sizes=\"(max-width: 768px) 100px, 220px\"\n            />\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

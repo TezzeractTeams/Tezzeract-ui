@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "TezzeractButtonLight",
+  "dependencies": [
+    "cn@^0.5.2"
+  ],
+  "files": [
+    {
+      "path": "components/ui/TezzeractButtonLight.tsx",
+      "content": "import React from \"react\";\nimport { cn } from \"cn\";\n\nexport interface TezzeractButtonLightProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  fullWidth?: boolean;\n  children: React.ReactNode;\n}\n\nexport const TezzeractButtonLight = React.forwardRef<HTMLButtonElement, TezzeractButtonLightProps>(\n  ({ className, fullWidth = false, children, style, ...props }, ref) => {\n    // Base styles\n    const baseStyles = \"inline-flex cursor-pointer flex-row items-center justify-center gap-2 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden whitespace-nowrap w-auto\";\n\n    // Text styles: Figtree, 500 weight, 14px, line-height 20px, letter-spacing 0%, center aligned\n    const textStyles = \"font-sans font-medium text-[14px] leading-5 tracking-normal text-center\";\n\n    // Layout and spacing (same padding as TezzeractButton)\n    const layoutStyles = \"h-10 px-6 py-2 rounded-xl\";\n\n    // Border\n    const borderStyles = \"border border-[#FFFFFF66]\";\n\n    // Width style\n    const widthStyle = fullWidth ? \"w-full\" : \"\";\n\n    // Background gradient\n    const backgroundGradient = \"radial-gradient(64.46% 80% at 50.53% 0%, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%)\";\n\n    // Text gradient\n    const textGradient = \"linear-gradient(90deg, #00A9EE 0%, #00378A 100%)\";\n\n    return (\n      <button\n        ref={ref}\n        className={cn(\n          baseStyles,\n          textStyles,\n          layoutStyles,\n          borderStyles,\n          widthStyle,\n          className\n        )}\n        style={{\n          background: backgroundGradient,\n          ...style,\n        }}\n        {...props}\n      >\n        <div\n          className=\"relative z-10 inline-flex items-center gap-2\"\n          style={{\n            backgroundImage: textGradient,\n            WebkitBackgroundClip: \"text\",\n            WebkitTextFillColor: \"transparent\",\n            backgroundClip: \"text\",\n          }}\n        >\n          {children}\n        </div>\n      </button>\n    );\n  }\n);\n\nTezzeractButtonLight.displayName = \"TezzeractButtonLight\";\n\nexport default TezzeractButtonLight;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

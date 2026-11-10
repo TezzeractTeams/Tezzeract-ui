@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "TezzeractText",
+  "dependencies": [
+    "cn@^0.5.2"
+  ],
+  "files": [
+    {
+      "path": "components/ui/TezzeractText.tsx",
+      "content": "import React from \"react\";\nimport { cn } from \"cn\";\n\nexport interface TezzeractTextProps extends React.HTMLAttributes<HTMLSpanElement> {\n  variant?: \"light\" | \"dark\";\n  children: React.ReactNode;\n  as?: \"span\" | \"p\" | \"div\";\n}\n\nexport const TezzeractText = React.forwardRef<HTMLElement, TezzeractTextProps>(\n  ({ className, variant = \"light\", children, as: Component = \"span\", style, ...props }, ref) => {\n    // Base styles\n    const baseStyles = \"font-sans font-normal not-italic text-[16px] leading-6 tracking-[-0.03em] align-middle\";\n\n    // Light variant - white color\n    const lightColor = \"text-white\";\n\n    // Dark variant - #555555 color\n    const darkColor = \"text-[#555555]\";\n\n    const colorStyle = variant === \"dark\" ? darkColor : lightColor;\n\n    return (\n      <Component\n        // @ts-expect-error - Polymorphic component ref type limitation\n        ref={ref}\n        className={cn(baseStyles, colorStyle, className)}\n        style={{\n          verticalAlign: \"middle\",\n          ...style,\n        }}\n        {...props}\n      >\n        {children}\n      </Component>\n    );\n  }\n);\n\nTezzeractText.displayName = \"TezzeractText\";\n\nexport default TezzeractText;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

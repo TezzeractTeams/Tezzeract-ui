@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pinned-scroll-context",
+  "files": [
+    {
+      "path": "lib/pinned-scroll-context.tsx",
+      "content": "\"use client\"\n\nimport { createContext, useContext } from \"react\"\n\nexport interface PinnedScrollContextValue {\n  isPinnedRef: React.MutableRefObject<boolean>\n}\n\nexport const PinnedScrollContext = createContext<PinnedScrollContextValue | null>(null)\n\nexport function usePinnedScroll() {\n  return useContext(PinnedScrollContext)\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:lib"
+}
