@@ -28,15 +28,15 @@ export function CopyCommand({
       type="button"
       onClick={handleCopy}
       className={cn(
-        "group flex w-full items-center justify-between gap-3 rounded-lg border bg-muted/40 px-4 py-3 font-mono text-sm hover:bg-muted/70 transition-colors",
+        "group flex w-full items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 font-mono text-sm text-white/80 transition-colors hover:border-[#27AAE1]/40 hover:bg-white/[0.06]",
         className
       )}
     >
       <code className="truncate text-left">{command}</code>
       {copied ? (
-        <CheckIcon className="size-4 shrink-0 text-foreground" />
+        <CheckIcon className="size-4 shrink-0 text-[#27AAE1]" />
       ) : (
-        <CopyIcon className="size-4 shrink-0 text-muted-foreground group-hover:text-foreground" />
+        <CopyIcon className="size-4 shrink-0 text-white/40 group-hover:text-white/80" />
       )}
     </button>
   )
