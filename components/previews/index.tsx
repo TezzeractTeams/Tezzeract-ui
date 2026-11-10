@@ -22,7 +22,17 @@ const PLACEHOLDER_IMAGE = "/globe.svg"
 // (most of the Tezzeract brand primitives use white text or white borders).
 function DarkStage({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-xl bg-[#05070d] p-10 flex items-center justify-center">
+    <div className="rounded-xl border border-white/10 bg-[#0a0d16] p-10 flex items-center justify-center w-full">
+      {children}
+    </div>
+  )
+}
+
+// A light wrapper for components designed to sit on a light background
+// (e.g. UserCard, BlogCard use dark/black text).
+function LightStage({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="rounded-xl bg-white p-8 flex items-center justify-center w-full">
       {children}
     </div>
   )
@@ -89,11 +99,13 @@ export const previews: Record<string, React.ReactNode> = {
     </div>
   ),
   UserCard: (
-    <UserCard
-      name="Jane Doe"
-      position="Content Lead"
-      avatar={PLACEHOLDER_IMAGE}
-    />
+    <LightStage>
+      <UserCard
+        name="Jane Doe"
+        position="Content Lead"
+        avatar={PLACEHOLDER_IMAGE}
+      />
+    </LightStage>
   ),
   TalentCard: (
     <DarkStage>
